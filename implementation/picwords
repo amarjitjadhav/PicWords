@@ -1,0 +1,29 @@
+
+PicWords can be considered as a kind of non-photorealistic rendering (NPR Packing)- NPR packing can be further classified into Mosaicking and Calligrams
+
+1) generate silhouette - binary image  (Yang part , Yin part) - Yang part is for keywords placing while the Yin part can be ignored.
+
+2) Yang part is further over-segmented into small patches, each of which serves as a container for one keyword.
+ 	- mean value coordinates method is used for the keyword-patch warping.
+
+3) post-processing techniques are adopted to improve the aesthetics of PicWords.
+
+
+whole system contains four modules: 
+
+1) Picture -
+	- generate its silhouette image 
+	In the silhouette image, background and trivial details are filtered and only the important patches are kept. At the same time, the 	original color image is segmented into several small patches with the state-of-the-art super-pixel segmentation algorithm.
+
+	A) Silhouette image generation process - (a) original image, (b) filtering background, (c) segmented foreground, (d) binary map, (e) 			final silhouette image after smoothing.
+
+	-3[a] We first use mean shift algorithm to segment the image into small superpixels (patches).
+	- Next, we convert all foreground superpixels to greyscale image, 
+	- which is further thresholded into binary image. 
+		- More concretely, the average luminance value of each patch is calculated, and only bright patches are kept.
+	- the binary map is refined and smoothed by applying a Gaussian filtering to remove tiny holes and blurs.
+
+
+2) Patch Generation:
+	- superpixel segmentation method
+
