@@ -9,7 +9,7 @@ a container for one keyword. To make sure that more important keywords are put i
 we rank both the patches and keywords and construct a correspondence between the patch list and keyword list. Then, mean 
 value coordinates method is used for the keyword-patch warping.
 
-![alt text] (https://github.com/amarjitjadhav/PicWords/blob/master/implementation/backup/1.png)
+![MyImage](https://github.com/amarjitjadhav/PicWords/blob/master/implementation/backup/1.png)
 
 In this section, we give an overview of the whole PicWords system. The whole system contains three modules: 
 1) Picture Module  
